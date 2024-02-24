@@ -32,18 +32,17 @@ export function Board(){
     return(
         <>
             {boardData.map((data)=>
-                (<div key={`board`+data.bno}>
+                (
+                    <div style={{borderTop:'1px solid #e8e8e8', borderBottom:'1px solid #e8e8e8'}} key={`board`+data.bno}>
                         <Link href={'/read/' + data.bno}>
                             <div>
                                 <p>제목: {data.btitle}</p>
                                 <p>내용: {data.bcontent}</p>
                             </div>
                         </Link>
-                        <button type={"button"} onClick={ () =>{
-                                    fetchDelete(data.bno);}}>
-                            삭제
-                        </button>
-                    </div>)
+
+                    </div>
+                )
             )}
         </>
     )
